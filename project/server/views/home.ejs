@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+  <link href="css/w3.css" rel="stylesheet">
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/qrcode.js"></script>
+  <script type="text/javascript" src="/angular_v1.2.30/angular.min.js"></script>
+
+  <script>
+		<% include ./home.controller.js %>
+  </script>
+
+</head>
+
+<body ng-app="homeApp" ng-controller="HomeController as homeVM">
+
+  <% include ./header.ejs %>
+
+  <br><br>
+  <div class="w3-header w3-center">
+    <h2>응원 정보 입력</h2>
+  </div>
+  <div class="w3-table w3-green w3-center">
+    <div class="w3-center w3-text-white">
+      <h3></h3>
+    </div>
+
+    <table align="center">
+      <tbody>
+        <tr>
+          <td><label>가로(X) : </label></td>
+          <td><input type="TEXT" style="text-align: center;" id="ID_HOME_TABLE_X"></td>
+        </tr>
+        <tr>
+          <td><label>세로(Y) : </label></td>
+          <td><input type="TEXT" style="text-align: center;" id="ID_HOME_TABLE_Y"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="button" value="생성" ng-click="homeVM.onClickCreate()"
+              class="w3-button w3-round-xxlarge w3-yellow w3-block"></td>
+          <td><input type="button" value="저장" ng-click="homeVM.onClickSave()"
+              class="w3-button w3-round-xxlarge w3-blue w3-block"></td>
+          <td><input type="button" value="QRCode 생성" ng-click="homeVM.onClickQRCode()"
+              class="w3-button w3-round-xxlarge w3-yellow w3-block"></td>
+              <td><input type="button" value="QRCode 불러오기" ng-click="homeVM.onClickLoad()"
+                class="w3-button w3-round-xxlarge w3-yellow w3-block"></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content-wrapper">
+    <div style="display: table; width: 100%; height: auto;">
+      <div style="display: table-cell; width: 100%; height: 100%">
+        <div style="padding: 30px">
+          <div class="box" style="padding: 15px; border-top-color: #40b136;">
+            <div class="box-body">
+              <div class="row">
+                <div class="col-12" style=" text-align: center;" id="dataTableArea">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12" style=" text-align: center;" id="qrTableArea">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

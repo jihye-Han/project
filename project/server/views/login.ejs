@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/w3.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/angular_v1.2.30/angular.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+    <script>
+
+		<% include ./login.controller.js %>
+
+    </script>
+</head>
+
+<body ng-app="loginApp" ng-controller="LogInController as loginVM">
+
+    <br><br>
+    <div class="w3-header w3-center">
+        <h2>로그인/LOGIN</h2>
+    </div>
+    <div class="w3-table w3-green w3-center">
+
+        <div class="w3-center w3-text-white">
+            <h3></h3>
+        </div>
+
+        <table align="center">
+            <tbody>
+                <tr>
+                    <td><label>사용자명(ID)</label></td>
+                    <td><input type="TEXT" id="ID_USERID_INPUT"></td>
+                </tr>
+                <tr>
+                    <td><label>암호(Passwd)</label></td>
+                    <td><input type="password" id="ID_PASSWORD_INPUT"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="ID_LOGIN_BUTTON" type="button" value="로그인" ng-click="loginVM.onClickLogIn()"
+                            class="w3-button w3-round-xxlarge w3-yellow w3-block">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="w3-margin w3-text-red w3-center">
+        <p>등록된 사용자의 아이디와 암호로 로그인 할 수 있습니다.<br>(ID: admin)</p>
+    </div>
+
+
+</body>
+
+</html>

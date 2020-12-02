@@ -1,0 +1,109 @@
+<style>
+    .box {
+        position: relative;
+        border-radius: 3px;
+        background: #ffffff;
+        border-top: 3px solid #d2d6de;
+        margin-bottom: 20px;
+        width: 100%;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .box-header {
+        color: #444;
+        display: block;
+        padding: 10px;
+        position: relative;
+    }
+
+    .box-header.with-border {
+        border-bottom: 1px solid #d4d0d0;
+    }
+
+    .box-header .box-title,
+    .box-header>.fa,
+    .box-header>.glyphicon,
+    .box-header>.ion {
+        display: inline-block;
+        font-size: 18px;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .box-header .box-description {
+        color: #999;
+    }
+
+    .box-body {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        padding: 10px;
+    }
+
+    .box-body>.table {
+        margin-bottom: 0;
+    }
+
+    .table>thead>tr>th {
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table>tbody>tr>td {
+        font-size: 14px;
+        height: 36px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .content-wrapper {
+        min-height: 100%;
+        background-color: #ecf0f5;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+<div ng-app="headerApp" ng-controller="HeaderController as headerVM">
+    <div class="w3-top">
+        <div class="w3-bar w3-dark-grey">
+            <a href="/home" class="w3-bar-item w3-button">Home</a>
+            
+            <a href="#" class="w3-bar-item w3-button" ng-click="headerVM.onClickLogOut()">로그아웃</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    angular
+        .module('headerApp', [])
+        .controller('HeaderController', ['$scope', '$http', HeaderController]);
+
+    function HeaderController($scope, $http) {
+        let headerVM = this;
+
+        headerVM.onClickLogOut = () => {
+
+            $http.post('/api/adminLogOut', {
+            })
+                .success(function (data, status, headers, config) {
+                    if (data.r === true) {
+
+                        alert('로그아웃');
+                        location.href = '/';
+                    }
+                })
+                .error(function (data, status, header, config) {
+                });
+        }
+    }
+
+</script>

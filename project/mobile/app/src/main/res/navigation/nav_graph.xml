@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.mobile.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_SettingFragment"
+            app:destination="@id/SettingFragment"/>
+
+        <action
+            android:id="@+id/action_HomeFragment_to_CheerFragment"
+            app:destination="@id/CheerFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/SettingFragment"
+        android:name="com.example.mobile.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting">
+
+        <action
+            android:id="@+id/action_SettingFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment"
+            app:popUpTo="@+id/SettingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/CheerFragment"
+        android:name="com.example.mobile.CheerFragment"
+        android:label="CheerFragment"
+        tools:layout="@layout/fragment_cheer">
+
+        <action
+            android:id="@+id/action_CheerFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment"
+            app:popUpTo="@+id/CheerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

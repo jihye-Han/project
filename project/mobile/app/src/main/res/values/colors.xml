@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff6666</color>
+    <color name="colorPrimaryDark">#ff6666</color> <!-- f16d04-->
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorClickDown">#ffb9e9</color>
+    <color name="colorAccentGreen">#03ac16</color>
+    <color name="colorAccentRed">#f93e3e</color>
+    <color name="colorAccentYellow">#efa300</color>
+    <color name="colorDefault">#898ca6</color>
+    <color name="colorEditUnderLine">#f69143</color>
+
+    <color name="colorRed_PM_NO">#FF8DA5</color>
+    <color name="colorYellow_PM_NG">#FFB973</color>
+    <color name="colorGreen_PM_OK">#7BD181</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorDarkGray">#474B4F</color>
+</resources>
